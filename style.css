@@ -4,9 +4,9 @@ body{
 }
 
 .div-container{
-    min-width: 400px;
-    max-width: 600px;
-    min-height: 500px;
+    min-width: 350px;
+    max-width: 400px;
+    min-height: 700px;
     max-height: auto;
     display: flex;
     flex-direction: row;
@@ -16,7 +16,7 @@ body{
 }
 .div-player1-points, .div-player2-points{
     height: auto;
-    width: 140px;
+    width: 120px;
 }
 
 img{
