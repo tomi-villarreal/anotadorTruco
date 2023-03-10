@@ -4,8 +4,10 @@ body{
 }
 
 .div-container{
-    width: 600px;
-    height: 700px;
+    min-width: 400px;
+    max-width: 600px;
+    min-height: 500px;
+    max-height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -14,21 +16,20 @@ body{
 }
 .div-player1-points, .div-player2-points{
     height: auto;
-    width: 200px;
+    width: 140px;
 }
-.numero{
-    width: 120px;
-    height: 120px;
-    border: solid 2px red;
-}
+
 img{
     width: 100px;
     bottom: 0;
 }
 #but-p1-plus, #but-p2-plus, #but-p2-minus, #but-p1-minus{
-    width: 50px;
+    width: 100%;
     margin-top: 15px;
     height: 50px;
+    border-radius: 50%;
+    font-size: 30px;
+
 }
 
 .div-button-p1, .div-button-p2{
@@ -36,7 +37,7 @@ img{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 50px;
 }
 
 .div-player1, .div-player2{
