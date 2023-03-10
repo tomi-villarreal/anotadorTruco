@@ -12,7 +12,7 @@ body{
     flex-direction: row;
     justify-content: space-around;
     margin: auto;
-    background-color: greenyellow;
+    background-color: red;
 }
 .div-player1-points, .div-player2-points{
     height: auto;
