@@ -49,6 +49,7 @@ function valuesPlus(cont, player){
         player.innerHTML+= switchValue(valueCont);
     }else{
         player.innerHTML= "Ganaste Reyyyyyyyyyyy";
+        winner();
     }
 }
 function returnZero(num){
@@ -57,6 +58,14 @@ function returnZero(num){
         return 0;
     }else{
         return num;
+    }
+}
+
+function winner(){
+    if(cont1 > cont2){
+        alert(textPlayer1 + " es el ganador");
+    }else{
+        alert(textPlayer2 + " es el ganador");
     }
 }
 button_p1_plus.addEventListener("click", ()=>{
