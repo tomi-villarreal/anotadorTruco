@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="div-container">
+    <div class="div-container" style="display: none;" id="game">
         
         <div class="div-player1">
             <h3 class="name-player1"></h3>
@@ -34,13 +34,35 @@
             </div>
         </div>
         
-        
-        
-        
+    </div>
+
+    <div class="menu" id="menu-game">
+        <div class="div-container-menu">
+            <h1>Menu</h1>
+            <div class="div-input">
+                <div>
+                    Player1
+                    <input type="text" class="player1" id="iplayer1">
+                </div>
+                <div>
+                    Player2
+                    <input type="text" class="player2" id="iplayer2">
+                </div>
+                <form class="form-points">
+                    <input id="input-player1" type="radio" value="30" name="points">30
+                    <input id="input-player2" type="radio" value="18" name="points">18
+                </form>
+            </div>
+            <div>
+                <button id="button-menu">Enviar</button>
+            </div>
+        </div>
     </div>
 
     <h4 id="text-footer">Design by tomi-villarreal</h4>
 
     <script src="script.js"></script>
 </body>
+
+
 </html>

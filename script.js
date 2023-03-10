@@ -11,7 +11,8 @@ const button_p2_plus = document.getElementById("but-p2-plus");
 const button_p2_minus = document.getElementById("but-p2-minus");
 const namePlayer1 = document.querySelector(".name-player1");
 const namePlayer2 = document.querySelector(".name-player2");
-
+const button_menu = document.getElementById("button-menu");
+const inputPlayer2 = document.getElementById("input-player2");
 var cont1 = 0;
 var cont2 = 0;
 
@@ -88,11 +89,23 @@ button_p2_minus.addEventListener("click", ()=>{
     valuesPlus(cont2, player2);
 })
 
+button_menu.addEventListener("click", ()=>{
+    // const inputPlayer1 = document.getElementById("input-player1");
+    const textPlayer1 = document.getElementById("iplayer1").value;
+    const textPlayer2 = document.getElementById("iplayer2").value;
+    const menu = document.getElementById("menu-game");
+    menu.style.cssText = "display: none";
+    const game = document.getElementById("game");
+    game.style.cssText = "display: flex";
+    namePlayer1.innerHTML= textPlayer1;
+    namePlayer2.innerHTML= textPlayer2;
 
-textPlayer1 = prompt("Nombre de jugador 1");
-textPlayer2= prompt("Nombre de jugador 2");
+})
 
-namePlayer1.innerHTML= textPlayer1;
-namePlayer2.innerHTML= textPlayer2;
+
+// textPlayer1 = prompt("Nombre de jugador 1");
+// textPlayer2= prompt("Nombre de jugador 2");
+
+
 
 
