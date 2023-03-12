@@ -61,15 +61,16 @@ img{
     height: 300px;
     background-color: azure;
     margin: auto;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: space-evenly;
     text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 .div-container-menu input{
     width: 100px;
@@ -78,4 +79,42 @@ img{
 .div-container-menu button{
     width: 100px;
     text-align: center;
+}
+
+button:hover{
+    background-color: darkgray;
+    cursor: pointer;
+}
+
+button:active{
+    transform: scale(0.9);
+}
+
+.div-container-menu-restart{
+    width: 400px;
+    height: 300px;
+    background-color: bisque;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.div-container-menu-restart div{
+
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+#button-volverJugar, #button-restart{
+    width: 150px;
+    height: 40px;
 }
