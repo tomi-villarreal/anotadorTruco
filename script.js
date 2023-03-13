@@ -16,8 +16,8 @@ const inputPlayer2 = document.getElementById("input-player2");
 const buttonReset = document.getElementById("button-restart");
 const buttonRestart = document.getElementById("button-volverJugar");
 const game = document.getElementById("game");
-const buttomAudio = new Audio("sounds/button.mp3");
-const winnerAudio = new Audio("sounds/winner.mp3");
+const buttomAudio = new Audio("//tomi-villarreal.github.io/anotadorTruco/sounds/button.mp3");
+const winnerAudio = new Audio("//tomi-villarreal.github.io/anotadorTruco/sounds/winner.mp3");
 const buttonPoint30 = document.getElementById("button-points-30");
 const buttonPoint18 = document.getElementById("button-points-18");
 
