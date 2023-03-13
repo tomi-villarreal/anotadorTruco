@@ -118,3 +118,11 @@ button:active{
     width: 150px;
     height: 40px;
 }
+
+#button-points-18, #button-points-30 {
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+}
+
+

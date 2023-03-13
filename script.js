@@ -16,11 +16,15 @@ const inputPlayer2 = document.getElementById("input-player2");
 const buttonReset = document.getElementById("button-restart");
 const buttonRestart = document.getElementById("button-volverJugar");
 const game = document.getElementById("game");
-
+const buttomAudio = new Audio("/sounds/button.mp3");
+const winnerAudio = new Audio("/sounds/winner.mp3");
+const buttonPoint30 = document.getElementById("button-points-30");
+const buttonPoint18 = document.getElementById("button-points-18");
 
 var cont1 = 0;
 var cont2 = 0;
 var numPoint = 0;
+
 function switchValue (num){
     switch (num) {
         case 1:
@@ -35,6 +39,7 @@ function switchValue (num){
             return val5;
     }
 }
+
 function valuesPlus(cont, player){
     if (numPoint == 30){
         if (cont < 6){
@@ -98,6 +103,7 @@ function valuesPlus(cont, player){
         }
     }
 }
+
 function returnZero(num){
 
     if(num < 0){
@@ -116,26 +122,48 @@ function winner(){
     }else{
         text.innerHTML = namePlayer2.innerHTML + " es el ganador";
     }
+    winnerAudio.play();
 }
 
-function verifyPoints(){
-    const form1 = document.getElementById("input-player1");
-    const form2 = document.getElementById("input-player2");
-    if (form1.checked) {
-        // Si la opción 1 está seleccionada, mostramos su valor
-        alert("La opción seleccionada es: " + form1.value);
-        numPoint = form1.value;
-      }
-      // Verificamos si la opción 2 está seleccionada
-      else if (form2.checked) {
-        // Si la opción 2 está seleccionada, mostramos su valor
-        alert("La opción seleccionada es: " + form2.value);
-        numPoint = form2.value;
-      }
-      // Si no se seleccionó ninguna opción, mostramos un mensaje de error
-      else {
-        alert("Debes seleccionar una opción");
-      }
+function verifyPoints(num){
+    // // Hecho con formulario
+    // const form1 = document.getElementById("input-player1");
+    // const form2 = document.getElementById("input-player2");
+    // if (form1.checked) {
+    //     // Si la opción 1 está seleccionada, mostramos su valor
+    //     // alert("La opción seleccionada es: " + form1.value);
+    //     numPoint = form1.value;
+    //     startGame("menu-game");
+
+    //   }
+    //   // Verificamos si la opción 2 está seleccionada
+    //   else if (form2.checked) {
+    //     // Si la opción 2 está seleccionada, mostramos su valor
+    //     // alert("La opción seleccionada es: " + form2.value);
+    //     numPoint = form2.value;
+    //     startGame("menu-game");
+
+    //   }
+    //   // Si no se seleccionó ninguna opción, mostramos un mensaje de error
+    //   else {
+    //     alert("Debes seleccionar una opción");
+    //   }
+
+    if(num == 0){
+        alert("Seleccione una cantidad de puntos");
+    }else{
+        return true;
+    }
+}
+
+function verifyPlayers(p1,p2){
+    if(p1 != "" && p2 != ""){
+        namePlayer1.innerHTML= p1;
+        namePlayer2.innerHTML= p2;
+        return true;
+    }else{
+        alert("Ingrese nombre de los players");
+    }
 }
 
 function startGame(menu){
@@ -181,34 +209,51 @@ function clearPoints(){
     player2.innerHTML= "";
 
 }
+
+//Eventos
+
 button_p1_plus.addEventListener("click", ()=>{
     cont1 = returnZero(cont1+=1);
     valuesPlus(cont1, player1);
+    buttomAudio.load();
+
+    buttomAudio.play();
 })
 
 button_p2_plus.addEventListener("click", ()=>{
     cont2 = returnZero(cont2+=1);
     valuesPlus(cont2, player2);
+    buttomAudio.load();
+
+    buttomAudio.play();
+
 })
 
 button_p1_minus.addEventListener("click", ()=>{
     cont1 = returnZero(cont1-=1);
     valuesPlus(cont1, player1);
+    buttomAudio.load();
+
+    buttomAudio.play();
+
 })
 
 button_p2_minus.addEventListener("click", ()=>{
     cont2 = returnZero(cont2-=1);
     valuesPlus(cont2, player2);
+    buttomAudio.load();
+    buttomAudio.play();
+
 })
 
 button_menu.addEventListener("click", ()=>{
     // const inputPlayer1 = document.getElementById("input-player1");
     const textPlayer1 = document.getElementById("iplayer1").value;
     const textPlayer2 = document.getElementById("iplayer2").value;
-    namePlayer1.innerHTML= textPlayer1;
-    namePlayer2.innerHTML= textPlayer2;
-    startGame("menu-game");
-    verifyPoints();
+    if(verifyPoints(numPoint) && verifyPlayers(textPlayer1, textPlayer2)){
+        startGame("menu-game");
+    }
+
 })
 
 buttonRestart.addEventListener("click", ()=>{
@@ -220,9 +265,27 @@ buttonRestart.addEventListener("click", ()=>{
 buttonReset.addEventListener("click", ()=>{
     clearPoints();
     unShowMenuSecondary();
+    stopGame();
     showMainMenu();
     
 })
+
+buttonPoint30.addEventListener("click", ()=>{
+    buttonPoint30.style.cssText = "background-color: green";
+    buttonPoint18.style.cssText = "background-color: softgrey";
+    numPoint = 30;
+    buttomAudio.play();
+
+})
+
+buttonPoint18.addEventListener("click", ()=>{
+    buttonPoint18.style.cssText = "background-color: green";
+    buttonPoint30.style.cssText = "background-color: softgrey";
+    numPoint = 18;
+    buttomAudio.play();
+
+})
+
 
 // textPlayer1 = prompt("Nombre de jugador 1");
 // textPlayer2= prompt("Nombre de jugador 2");
